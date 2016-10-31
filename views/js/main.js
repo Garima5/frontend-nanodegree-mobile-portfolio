@@ -497,21 +497,23 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Moves the sliding background pizzas based on scroll position
+var items=[];
 function updatePositions() {
   frame++;
   //requestAnimationFrame(updatePositions());
   window.performance.mark("mark_start_frame");
 
- // var items = document.querySelectorAll('.mover');
- var items = document.getElementsByClassName('mover');
-  var latestKnownScrollY = window.scrollY;
+ 
+ // items = document.getElementsByClassName('mover');
+  var latestKnownScrollY = window.scrollY; //get the current y coordinate
   var phase=[];
+  // Calculates the five phases that animate the scrolling background pizzas outside the For Loop
   for(var j=0;j<5;j++)
   {
     phase[j]=Math.sin((latestKnownScrollY / 1250) + j);
   }
-
- for (var i = 0; i < items.length; i++) {
+var len=items.length;
+ for (var i = 0; i <len ; i++) {
     
    // var phase = Math.sin((latestKnownScrollY / 1250) + (i % 5));
    items[i].style.left = items[i].basicLeft + 100 * phase[i%5] + 'px';
@@ -528,14 +530,20 @@ function updatePositions() {
     logAverageFrame(timesToUpdatePosition);
   }
 }
+//requestAnimationFrame(updatePositions);
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
 
+
+//window.requestAnimationFrame(updatePositions());
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  //caching the variable
+  //limiting dom access
+  var elementi=document.getElementById('movingPizzas1');
   for (var i = 0; i < 30; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
@@ -544,7 +552,10 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+   // document.querySelector("#movingPizzas1").appendChild(elem);
+   elementi.appendChild(elem);
   }
+  // Gets all moving pizza objects from the DOM and puts them into one array to reduce DOM access
+  items = document.getElementsByClassName('mover');
   updatePositions();
 });
