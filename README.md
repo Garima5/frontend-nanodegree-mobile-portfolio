@@ -57,13 +57,16 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 ## Changes made to meet Project's rubric
 
 ### For page speed insights :
-1) added async attribute
-2) added media query
-3) inlined javascript
-4) reduced image sizes,scaled them to 115*75 pixel
-5) minified text
-6) removing font api call
-7) inlined css
+<ol>
+<li> added async attribute</li>
+<li>added media query</li>
+<li>inlined javascript</li>
+<li> reduced image sizes,scaled them to 115*75 pixel</li>
+<li> minified text</li>
+<li> removing font api call</li>
+<li> inlined css</li>
+</ol>
+
 ### Changes made for getting 60fps:
 1) cached the number of pizzas in global variable items
 2) Calculated the five phases that animate the scrolling background pizzas outside the For Loop
