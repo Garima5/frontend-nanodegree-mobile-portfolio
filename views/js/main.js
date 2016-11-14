@@ -430,16 +430,16 @@ var resizePizzas = function(size) {
         var element = document.getElementById('pizzaSize');
         switch (size) {
             case "1":
-               
+                //document.querySelector("#pizzaSize").innerHTML = "Small";
                 element.innerHTML = "Small";
                 return;
             case "2":
-                
+                // document.querySelector("#pizzaSize").innerHTML = "Medium";
                 element.innerHTML = "Medium";
                 return;
 
             case "3":
-                
+                // document.querySelector("#pizzaSize").innerHTML = "Large";
                 element.innerHTML = "Large";
                 return;
             default:
@@ -450,7 +450,12 @@ var resizePizzas = function(size) {
 
     changeSliderLabel(size);
 
-   function sizeSwitcher (size) {
+    // Iterates through pizza elements on the page and changes their widths
+   
+
+
+    
+    function sizeSwitcher (size) {
       switch(size) {
         case "1":
           return 0.25;
@@ -471,8 +476,11 @@ var resizePizzas = function(size) {
     var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
             // Gets the number of pizza elements outside the For Loop
           var  len = randomPizzas.length;
+          // Changes the slider value to a percent width
            var newwidth = (sizeSwitcher(size)*100)  + '%';
     for (var i = 0; i < len; i++) {
+     // var dx = determineDx(randomPizzas[i], size);
+     // var newwidth = (randomPizzas[i].offsetWidth + dx) + 'px';
       randomPizzas[i].style.width = newwidth;
     }
   }
@@ -485,17 +493,6 @@ var resizePizzas = function(size) {
   var timeToResize = window.performance.getEntriesByName("measure_pizza_resize");
   console.log("Time to resize pizzas: " + timeToResize[timeToResize.length-1].duration + "ms");
 };
-    }
-
-    changePizzaSizes(size);
-
-    // User Timing API is awesome
-    window.performance.mark("mark_end_resize");
-    window.performance.measure("measure_pizza_resize", "mark_start_resize", "mark_end_resize");
-    var timeToResize = window.performance.getEntriesByName("measure_pizza_resize");
-    console.log("Time to resize pizzas: " + timeToResize[0].duration + "ms");
-};
-
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
@@ -565,9 +562,6 @@ function updatePositions() {
 }
 
 
-
-//requestAnimationFrame(updatePositions);
-
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
 
@@ -588,7 +582,6 @@ document.addEventListener('DOMContentLoaded', function() {
         elem.style.width = "73.333px";
         elem.basicLeft = (i % cols) * s;
         elem.style.top = (Math.floor(i / cols) * s) + 'px';
-        // document.querySelector("#movingPizzas1").appendChild(elem);
         elementi.appendChild(elem);
     }
     // Gets all moving pizza objects from the DOM and puts them into one array to reduce DOM access
