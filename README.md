@@ -68,13 +68,17 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 </ol>
 
 ### Changes made for getting 60fps:
-1) cached the number of pizzas in global variable items
-2) Calculated the five phases that animate the scrolling background pizzas outside the For Loop
-3) limiting DOM access by caching value of length in variable
-4) caching the variables to reduce DOM access
-5) Using .getElementByClassName or .getElementById selector instead .querySelector
-6) Gets all moving pizza objects from the DOM and puts them into one array to reduce DOM access
+<ol>
+<li> cached the number of pizzas in global variable items</li>
+<li> Calculated the five phases that animate the scrolling background pizzas outside the For Loop</li>
+<li> limiting DOM access by caching value of length in variable</li>
+<li> caching the variables to reduce DOM access</li>
+<li> Using .getElementByClassName or .getElementById selector instead .querySelector</li>
+<li> Gets all moving pizza objects from the DOM and puts them into one array to reduce DOM access</li>
+</ol>
 ### Changes made to resize pizzas in less than 5 ms:
-1) In changeSliderLabel() limiting the call to DOM tree by caching the pizzaSize element in variable 'element'
-2) Removed the determinDx and sizeSwitcher methods and adjusted their function in changePizzaSizes
-3) In changePizzaSizes : accessed DOM outside the for loop by caching the elements in randomPizzas
+<ol>
+<li> In changeSliderLabel() limiting the call to DOM tree by caching the pizzaSize element in variable 'element'</li>
+<li> Removed the determinDx and sizeSwitcher methods and adjusted their function in changePizzaSizes</li>
+<li> In changePizzaSizes : accessed DOM outside the for loop by caching the elements in randomPizzas</li>
+</ol>
