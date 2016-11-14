@@ -75,6 +75,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 <li> caching the variables to reduce DOM access</li>
 <li> Using .getElementByClassName or .getElementById selector instead .querySelector</li>
 <li> Gets all moving pizza objects from the DOM and puts them into one array to reduce DOM access</li>
+<li>Using backface visibility:hidden in css</li>
 </ol>
 ### Changes made to resize pizzas in less than 5 ms:
 <ol>
