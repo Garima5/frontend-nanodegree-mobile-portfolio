@@ -80,6 +80,6 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 ### Changes made to resize pizzas in less than 5 ms:
 <ol>
 <li> In changeSliderLabel() limiting the call to DOM tree by caching the pizzaSize element in variable 'element'</li>
-<li> Removed the determinDx and sizeSwitcher methods and adjusted their function in changePizzaSizes</li>
+<li> Removed the determinDx method and adjusted their function in changePizzaSizes</li>
 <li> In changePizzaSizes : accessed DOM outside the for loop by caching the elements in randomPizzas</li>
 </ol>
