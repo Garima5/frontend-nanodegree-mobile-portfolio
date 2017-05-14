@@ -67,7 +67,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 <li> inlined css</li>
 </ol>
 
-### Changes made for getting 60fps:
+###  Changes made for getting 60fps:
 <ol>
 <li> cached the number of pizzas in global variable items</li>
 <li> Calculated the five phases that animate the scrolling background pizzas outside the For Loop</li>
@@ -77,7 +77,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 <li> Gets all moving pizza objects from the DOM and puts them into one array to reduce DOM access</li>
 <li>Using backface visibility:hidden in css</li>
 </ol>
-### Changes made to resize pizzas in less than 5 ms:
+###  Changes made to resize pizzas in less than 5 ms:
 <ol>
 <li> In changeSliderLabel() limiting the call to DOM tree by caching the pizzaSize element in variable 'element'</li>
 <li> Removed the determinDx method and adjusted their function in changePizzaSizes</li>
